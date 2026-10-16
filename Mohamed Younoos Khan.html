@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohamed Younoos Khan</title>
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{--bk:#000;--gr:#39ff14;--wh:#fff;--dim:rgba(255,255,255,.66);--line:rgba(255,255,255,.2);
+--px:'Press Start 2P',monospace;--tx:'Chakra Petch',system-ui,sans-serif;
+color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);background:var(--bk)}
+body{margin:0;background:var(--bk);color:var(--wh);font:400 1.05rem/1.65 var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gr);outline-offset:3px}
+::selection{background:var(--gr);color:var(--bk)}
+
+/* opening: colour circle reveal */
+#intro{position:fixed;inset:0;z-index:1;overflow:hidden}
+#intro .disc{position:absolute;left:50%;top:50%;width:150vmax;height:150vmax;margin:-75vmax 0 0 -75vmax;border-radius:50%;background:var(--gr);transform:scale(0);animation:disc .85s cubic-bezier(.7,0,.2,1) .1s forwards}
+#intro .mk{position:absolute;left:50%;top:50%;width:min(58vw,280px);transform:translate(-50%,-50%);opacity:0;animation:pop .01s .55s forwards}
+#intro .gr{position:absolute;left:0;right:0;top:calc(50% + min(14vw,70px) + 1.6rem);text-align:center;font:700 clamp(1.6rem,7vw,2.6rem)/1.2 var(--tx);color:var(--bk);letter-spacing:-.01em}
+.btn.hi{min-width:11.5rem;text-align:center}
+.skip{position:fixed;z-index:80;right:max(1rem,env(safe-area-inset-right));top:calc(1rem + env(safe-area-inset-top,0px));font:400 .6rem var(--px);color:var(--wh);background:var(--bk);border:2px solid var(--wh);padding:.7rem .8rem;cursor:pointer}
+.skip:hover{background:var(--wh);color:var(--bk)}
+#site{position:relative;z-index:2;background:var(--bk);animation:reveal 1s cubic-bezier(.7,0,.2,1) .95s both}
+@keyframes disc{to{transform:scale(1)}}
+@keyframes pop{to{opacity:1}}
+@keyframes reveal{from{clip-path:circle(0% at 50% 50%)}to{clip-path:circle(75% at 50% 50%)}}
+
+/* hero */
+.hero{min-height:100svh;padding:5.5rem 1.25rem 7rem;display:flex;flex-direction:column;justify-content:space-between;max-width:1200px;margin:auto}
+.hero .mono{width:clamp(130px,34vw,230px);align-self:flex-start;cursor:pointer;-webkit-tap-highlight-color:transparent;background:none;border:0;padding:0}
+.name{margin:2.5rem 0 0;font:700 clamp(2.9rem,16.5vw,10.5rem)/.88 var(--tx);letter-spacing:-.035em;text-transform:uppercase}
+.name .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.name .ln span{display:block;transform:translateY(105%);transition:transform .9s cubic-bezier(.16,.84,.3,1)}
+.ready .name .ln span{transform:none}
+.ready .name .ln:nth-child(2) span{transition-delay:.09s}
+.ready .name .ln:nth-child(3) span{transition-delay:.18s}
+.name .cur{display:inline-block;width:.32em;height:.12em;background:var(--gr);margin-left:.08em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.intro-rest{opacity:0;transition:opacity .8s .5s}
+.ready .intro-rest{opacity:1}
+.tag{font-size:clamp(1.15rem,3.6vw,1.6rem);line-height:1.4;font-weight:500;max-width:30ch;margin:2rem 0 1.4rem}
+.now{display:flex;gap:.9rem;align-items:baseline;color:var(--dim);margin:0 0 2.2rem;max-width:52ch}
+.now b{font:400 .62rem/1.6 var(--px);color:var(--gr);flex:none}
+.btns{display:flex;flex-wrap:wrap;gap:1rem 1.2rem}
+.btn{font:400 .72rem/1 var(--px);text-decoration:none;padding:1.05rem 1.3rem;border:2px solid var(--wh);color:var(--wh);background:var(--bk);box-shadow:5px 5px 0 var(--wh);transition:transform .12s,box-shadow .12s}
+.btn.pri{background:var(--gr);border-color:var(--gr);color:var(--bk);box-shadow:5px 5px 0 var(--wh)}
+.btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--wh)}
+.btn:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--wh)}
+
+/* sections */
+.sec{max-width:1200px;margin:auto;padding:6.5rem 1.25rem 2rem;display:grid;gap:2.2rem;border-top:2px solid var(--line)}
+.sec>h2{font:400 .8rem/1.5 var(--px);margin:0;color:var(--gr);display:flex;gap:.8rem;align-items:center}
+.sec>h2::before{content:"";width:.7rem;height:.7rem;background:var(--gr);flex:none}
+.lead{font:700 clamp(1.6rem,5.4vw,2.7rem)/1.15 var(--tx);letter-spacing:-.02em;margin:0 0 1.6rem;max-width:20ch}
+.body p{max-width:58ch;margin:0 0 1.15rem;color:var(--dim)}
+.body p:first-of-type{color:var(--wh)}
+@media(min-width:860px){.sec{grid-template-columns:230px 1fr;gap:3rem;padding:8rem 2.5rem 3rem}.sec>h2{position:sticky;top:2.5rem;align-self:start}.hero{padding:6rem 2.5rem 6rem}}
+
+/* skills: tiers, each its own shape */
+.tier{margin:0 0 2.6rem}
+.tier h3{font:400 .62rem/1.6 var(--px);margin:0 0 .9rem;color:var(--dim)}
+.t1 p{font:700 clamp(1.6rem,6vw,2.6rem)/1.15 var(--tx);margin:0;letter-spacing:-.02em;max-width:22ch}
+.t2{display:flex;flex-wrap:wrap;gap:.6rem}
+.t2 span{border:2px solid var(--wh);padding:.45rem .9rem;font-weight:500}
+.t3 span{border:2px dashed var(--line);color:var(--dim);padding:.35rem .8rem;display:inline-block;margin:0 .5rem .5rem 0}
+.tier .note{color:var(--dim);margin:.9rem 0 0;max-width:46ch;font-size:.95rem}
+
+/* journey: quest log */
+.quest{display:grid;grid-template-columns:1.1rem 1fr;gap:0 1.1rem;padding:1.5rem 0;border-bottom:2px solid var(--line)}
+.quest:first-of-type{border-top:2px solid var(--line)}
+.quest .sq{width:1.1rem;height:1.1rem;margin-top:.35rem;border:2px solid var(--gr)}
+.quest.done .sq{background:var(--gr)}
+.quest.doing .sq{background:linear-gradient(90deg,var(--gr) 50%,transparent 50%)}
+.quest.lock .sq{border:2px dashed var(--dim)}
+.quest small{display:block;font:400 .58rem/1.6 var(--px);color:var(--dim);margin-bottom:.4rem}
+.quest h3{font:700 1.4rem/1.2 var(--tx);margin:0 0 .4rem}
+.quest p{margin:0;color:var(--dim);max-width:54ch}
+.quest.lock h3{color:var(--dim)}
+
+/* beyond code: character sheet */
+.sheet{margin:0;display:grid;gap:0}
+.sheet div{display:grid;gap:.2rem;padding:1.1rem 0;border-bottom:2px dotted var(--line)}
+.sheet dt{font:400 .6rem/1.6 var(--px);color:var(--gr)}
+.sheet dd{margin:0;font:500 1.2rem/1.4 var(--tx);max-width:40ch}
+@media(min-width:700px){.sheet div{grid-template-columns:15rem 1fr;gap:2rem;align-items:baseline}}
+
+/* contact */
+.links a{display:flex;justify-content:space-between;gap:1rem;align-items:baseline;flex-wrap:wrap;padding:1.3rem .2rem;border-top:2px solid var(--line);text-decoration:none;transition:background .15s,color .15s,padding .15s}
+.links a:last-child{border-bottom:2px solid var(--line)}
+.links b{font:400 .62rem var(--px);color:var(--gr)}
+.links span{font:700 clamp(1.1rem,4.6vw,2rem)/1.2 var(--tx);overflow-wrap:anywhere}
+.links a:hover{background:var(--gr);color:var(--bk);padding-left:1rem;padding-right:1rem}
+.links a:hover b{color:var(--bk)}
+footer{max-width:1200px;margin:auto;padding:4rem 1.25rem 8rem;color:var(--dim);font-size:.9rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer em{font:400 .55rem/1.8 var(--px);font-style:normal}
+
+/* hotbar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:center;padding:0 .6rem calc(.6rem + env(safe-area-inset-bottom,0px));pointer-events:none}
+.bar nav{display:flex;gap:.3rem;pointer-events:auto;background:var(--bk);border:2px solid var(--wh);padding:.3rem;max-width:100%}
+.bar a{font:500 .74rem/1 var(--tx);text-decoration:none;padding:.8rem .55rem;min-width:0;flex:1 1 0;text-align:center;border:2px solid transparent;color:var(--dim)}
+.bar a:hover{color:var(--wh);border-color:var(--line)}
+.bar a.on{background:var(--gr);color:var(--bk);font-weight:700}
+@media(min-width:600px){.bar a{padding:.8rem 1.1rem;font-size:.85rem}}
+
+/* scanlines, very faint */
+#site::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px)}
+
+/* easter egg */
+.sweep{position:fixed;z-index:90;left:50%;top:50%;width:150vmax;height:150vmax;margin:-75vmax 0 0 -75vmax;border-radius:50%;background:var(--gr);transform:scale(0);pointer-events:none}
+.sweep.go{animation:sweep 1.6s cubic-bezier(.7,0,.2,1)}
+@keyframes sweep{0%{transform:scale(0)}35%,60%{transform:scale(1)}100%{transform:scale(0)}}
+.toast{position:fixed;z-index:100;left:50%;top:50%;width:min(88vw,430px);transform:translate(-50%,-50%) scale(.9);opacity:0;background:var(--bk);border:3px solid var(--bk);box-shadow:6px 6px 0 var(--wh);padding:1.4rem;pointer-events:none;transition:opacity .25s,transform .25s}
+.toast.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.toast b{display:block;font:400 .66rem/1.7 var(--px);color:var(--gr);margin-bottom:.8rem}
+.toast p{margin:0;font-weight:500}
+
+@media(prefers-reduced-motion:reduce){
+#intro,.skip{display:none}
+#site{animation:none}
+.name .ln span,.intro-rest{transition:none;transform:none;opacity:1}
+.name .cur{animation:none}
+html{scroll-behavior:auto}
+.btn,.links a{transition:none}
+.sweep.go{animation:none;transform:scale(0)}
+}
+</style>
+</head>
+<body>
+
+<div id="intro" aria-hidden="true"><div class="disc"></div><div class="mk" id="mk1"></div><div class="gr" id="gr">Hi</div></div>
+<button class="skip" id="skip" type="button">Skip</button>
+
+<div id="site">
+<header class="hero" id="top">
+  <button class="mono" id="mono" type="button" aria-label="MYK monogram"></button>
+  <div>
+    <h1 class="name" aria-label="Mohamed Younoos Khan">
+      <span class="ln"><span>Mohamed</span></span>
+      <span class="ln"><span>Younoos</span></span>
+      <span class="ln"><span>Khan<i class="cur"></i></span></span>
+    </h1>
+    <div class="intro-rest">
+      <p class="tag">I play games to switch off, and I'm learning to code to find out how they're made.</p>
+      <p class="now"><b>Now</b><span>Currently in my first year of B.Tech IT, writing small programs and breaking them on purpose.</span></p>
+      <div class="btns">
+        <a class="btn pri" href="#about">Explore</a>
+        <a class="btn hi" href="#contact" aria-label="Say hi"><span id="hi" aria-hidden="true">Say hi</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="sec" id="about">
+  <h2>About</h2>
+  <div class="body">
+    <p class="lead">I started with a controller and ended up curious about what's behind the screen.</p>
+    <p>I'm Younoos, a first-year B.Tech IT student. Games have taken most of my free time for as long as I can remember, and at some point I stopped only playing them and started wondering how they work. How a character jumps. Why a level loads. Who decided the enemy would do that.</p>
+    <p>College gave that curiosity somewhere to go. I'm learning to code properly now, one small program at a time. I'm slow and stubborn about it, which helps in coding and in ranked matches.</p>
+    <p>I don't have a big portfolio yet. What I have is a lot of curiosity and a habit of sticking with a hard level until I clear it. This site is the first thing I built and put my name on.</p>
+  </div>
+</section>
+
+<section class="sec" id="skills">
+  <h2>Skills</h2>
+  <div>
+    <div class="tier t1">
+      <h3>Comfortable</h3>
+      <p>Learning something new the hard way. Finding answers when I'm stuck. Working with a team.</p>
+    </div>
+    <div class="tier">
+      <h3>Learning</h3>
+      <div class="t2"><span>C</span><span>Python</span><span>HTML and CSS</span><span>Git and GitHub</span></div>
+      <p class="note">Each of these makes sense on some days and none on others.</p>
+    </div>
+    <div class="tier t3">
+      <h3>Not started yet</h3>
+      <span>Unity</span><span>Data structures</span><span>Databases</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="journey">
+  <h2>Journey</h2>
+  <div>
+    <div class="quest done"><i class="sq"></i><div><small>Made</small><h3>This website</h3><p>Hand-built in HTML, CSS and a little JavaScript. No templates. It has a secret in it.</p></div></div>
+    <div class="quest done"><i class="sq"></i><div><small>Made</small><h3>First programs in C</h3><p>Small ones from my first-year labs. Calculators and patterns, mostly. They run, and that still feels good.</p></div></div>
+    <div class="quest doing"><i class="sq"></i><div><small>In progress</small><h3>Python and the web</h3><p>Getting comfortable with the language, and learning how a page on your screen actually gets there.</p></div></div>
+    <div class="quest lock"><i class="sq"></i><div><small>Locked</small><h3>A small 2D game of my own</h3><p>Start to finish, even if it's tiny and ugly. Needs a few more skills first.</p></div></div>
+    <div class="quest lock"><i class="sq"></i><div><small>Locked</small><h3>A tracker for my own game stats</h3><p>Something I'd really use, which is the best reason to build anything.</p></div></div>
+  </div>
+</section>
+
+<section class="sec" id="beyond">
+  <h2>Beyond code</h2>
+  <div>
+    <p class="lead">Mostly games, with a few rules.</p>
+    <dl class="sheet">
+      <div><dt>Main hobby</dt><dd>Gaming, usually with friends. I'll pick co-op over solo every time.</dd></div>
+      <div><dt>Rule I live by</dt><dd>Never skip the tutorial.</dd></div>
+      <div><dt>Weakness</dt><dd>Saying "one more match" at 11 pm.</dd></div>
+      <div><dt>Favourite part of any game</dt><dd>The first ten minutes, when nothing is figured out yet.</dd></div>
+      <div><dt>Habit</dt><dd>When a game surprises me, I look up how it was made.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="sec" id="contact">
+  <h2>Contact</h2>
+  <div>
+    <p class="lead">Got a project, a game night, or advice for a first-year? Say hi.</p>
+    <div class="links">
+      <a href="mailto:younoos@example.com"><b>Email</b><span>younoos@example.com</span></a>
+      <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener"><b>LinkedIn</b><span>in/your-handle</span></a>
+      <a href="https://github.com/your-username" target="_blank" rel="noopener"><b>GitHub</b><span>your-username</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>Mohamed Younoos Khan, 2026.</span>
+  <em id="foot">Old-school gamers know the code.</em>
+</footer>
+
+<div class="bar"><nav aria-label="Sections">
+  <a href="#about">About</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#beyond">Beyond</a><a href="#contact">Contact</a>
+</nav></div>
+</div>
+
+<div class="sweep" id="sweep"></div>
+<div class="toast" id="toast" role="status"><b>Achievement unlocked</b><p>Secret found. Player 2 has joined. Tell me you found it and I'll owe you a match.</p></div>
+
+<script>
+(function(){
+  var L={M:["10001","11011","10101","10001","10001"],Y:["10001","01010","00100","00100","00100"],K:["10010","10100","11000","10100","10010"]};
+  function mono(fg,sh){var g='',x=0;'MYK'.split('').forEach(function(c){L[c].forEach(function(r,y){r.split('').forEach(function(v,i){if(v==='1')g+='<rect x="'+(x+i)+'" y="'+y+'" width="1.02" height="1.02"/>'})});x+=6});
+    return '<svg viewBox="0 0 17.6 5.6" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges" role="img" aria-label="MYK"><g fill="'+sh+'" transform="translate(.55 .55)">'+g+'</g><g fill="'+fg+'">'+g+'</g></svg>'}
+  document.getElementById('mk1').innerHTML=mono('#000','#fff');
+  document.getElementById('mono').innerHTML=mono('#39ff14','#fff');
+
+  // hello in many languages: fast in the opening, slow on the Say hi button
+  var hello=['Hello','Hola','Bonjour','नमस्ते','வணக்கம்','السلام عليكم','こんにちは','Ciao','안녕하세요','Hallo','Olá','Привет','Merhaba','你好','Salaam','Hi'];
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var gi=0,gEl=document.getElementById('gr');
+    setTimeout(function(){var t=setInterval(function(){var el=document.getElementById('gr');if(!el||gi>=hello.length-1){clearInterval(t);return}gi++;el.textContent=hello[gi]},80)},350);
+    var hb=document.getElementById('hi'),hj=0;
+    setInterval(function(){hj=(hj+1)%(hello.length+1);hb.textContent=hj===hello.length?'Say hi':hello[hj]},1600);
+  }
+
+  var body=document.body,site=document.getElementById('site'),intro=document.getElementById('intro'),skip=document.getElementById('skip');
+  var rm=matchMedia('(prefers-reduced-motion: reduce)').matches,done=false;
+  function finish(){if(done)return;done=true;body.classList.add('ready');site.style.animation='none';site.style.clipPath='none';if(intro)intro.remove();skip.remove()}
+  if(rm){finish()}else{
+    setTimeout(function(){body.classList.add('ready')},1400);
+    site.addEventListener('animationend',function(e){if(e.animationName==='reveal')finish()});
+    setTimeout(finish,2300);
+    skip.addEventListener('click',finish);
+  }
+
+  // hotbar highlight
+  var links=[].slice.call(document.querySelectorAll('.bar a'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-45% 0px -50% 0px'});
+    document.querySelectorAll('main section').forEach(function(s){io.observe(s)});
+  }
+
+  // hidden easter egg: Konami code, or tap the monogram five times
+  var code=[38,38,40,40,37,39,37,39,66,65],pos=0,taps=0,tt,found=false;
+  function egg(){
+    var sw=document.getElementById('sweep'),t=document.getElementById('toast');
+    sw.classList.remove('go');void sw.offsetWidth;sw.classList.add('go');
+    setTimeout(function(){t.classList.add('show')},650);
+    setTimeout(function(){t.classList.remove('show')},5200);
+    if(!found){found=true;document.getElementById('foot').textContent='1 of 1 secrets found.'}
+  }
+  addEventListener('keydown',function(e){pos=(e.keyCode===code[pos])?pos+1:(e.keyCode===code[0]?1:0);if(pos===code.length){pos=0;egg()}});
+  document.getElementById('mono').addEventListener('click',function(){taps++;clearTimeout(tt);tt=setTimeout(function(){taps=0},1200);if(taps>=5){taps=0;egg()}});
+})();
+</script>
+</body>
+</html>
